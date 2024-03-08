@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ErrorPage from "./pages/error-page";
+import { useMediaQuery } from "./hooks/use-media-query";
+import Header from "./components/Header";
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import tw from "twin.macro";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { isMD } = useMediaQuery();
+  const Main = lazy(() => import("./pages/main-page"));
+
+  if (isMD) return <ErrorPage />;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Suspense fallback={<></>}>
+      <Header />
+      <BrowserRouter>
+        <RouteWrapper>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </RouteWrapper>
+      </BrowserRouter>
+    </Suspense>
+  );
 }
-
-export default App
+const RouteWrapper = tw.main`relative w-full h-full`;
+export default App;
