@@ -51,7 +51,7 @@ const Wrapper = tw.div`
 `;
 
 const LnbWrapper = tw.div`
-  
+  transition-all duration-1000
 `;
 
 const IconWrapper = tw.div`
