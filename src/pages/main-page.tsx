@@ -1,5 +1,5 @@
 import tw from "twin.macro";
-import RouterBox from "../components/main/RouterBox";
+import { RouterBox } from "../components/main/router-box";
 
 const RouterContents = [
   {

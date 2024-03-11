@@ -1,10 +1,10 @@
 import tw from "twin.macro";
 import Logo from "../assets/logo-color.png";
 import { IconHambuger } from "./icons";
-import Lnb from "./Lnb";
 import { useEffect, useRef, useState } from "react";
+import { Lnb } from "./lnb";
 
-const Header = () => {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -65,5 +65,3 @@ const LogoImg = tw.img`
 const Title = tw.h1`
   font-xxl-b text-black
 `;
-
-export default Header;

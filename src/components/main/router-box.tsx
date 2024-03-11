@@ -7,7 +7,12 @@ interface RouterBoxProps {
   onClick: () => void;
 }
 
-const RouterBox = ({ title, icon, subTitle, onClick }: RouterBoxProps) => {
+export const RouterBox = ({
+  title,
+  icon,
+  subTitle,
+  onClick,
+}: RouterBoxProps) => {
   return (
     <Wrapper onClick={onClick}>
       <TitleWrapper>
@@ -41,5 +46,3 @@ const IconWrapper = tw.div`
 const SubTitle = tw.div`
     font-xl-m text-black
 `;
-
-export default RouterBox;
