@@ -12,7 +12,7 @@ export const krumpWordsCulture: KrumpInformation[] = [
     reviewBy: "Korea Krump Dictionary",
     createdAt: "2021-10-10",
     parentId: null,
-    childrenId: [2, 3, 4],
+    childrenId: [3, 4],
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const krumpWordsCulture: KrumpInformation[] = [
     link: "https://www.youtube.com/watch?v=6wXkI4t7nuc",
     reviewBy: "Korea Krump Dictionary",
     createdAt: "2021-10-10",
-    parentId: 1,
+    parentId: null,
     childrenId: null,
   },
   {

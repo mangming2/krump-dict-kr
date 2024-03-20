@@ -21,10 +21,6 @@ const KrumpWordDancePage = () => {
     getKrumpWords();
   }, []);
 
-  if (krumpWords.length === 0) {
-    return <LoadingPage />;
-  }
-
   return (
     <div>
       <h1>Krump Word Dance</h1>

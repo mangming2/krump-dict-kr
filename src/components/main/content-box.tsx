@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 import { KrumpInformation } from "../../types";
-import { IconArrowRight } from "../icons";
+import { IconArrowRight, IconInfo } from "../icons";
 
 interface ContentBoxProps extends KrumpInformation {
   key: number;
@@ -17,12 +17,13 @@ export const ContentBox = ({
 }: ContentBoxProps) => {
   return (
     <Wrapper key={key} onClick={onClick}>
-      {!hasChildren && (
-        <IconWrapper>
-          <IconArrowRight />
-        </IconWrapper>
-      )}
-      <StyledImage />
+      <IconWrapper>
+        {hasChildren ? (
+          <IconArrowRight width="20" height="20" color="black" />
+        ) : (
+          <IconInfo width="20" height="20" color="black" />
+        )}
+      </IconWrapper>
 
       <TextWrapper>
         <TitleWrapper>
@@ -47,16 +48,14 @@ const Wrapper = tw.div`
   border-solid border-2 border-gray-200
   p-16 rounded-md cursor-pointer
   hover:(shadow-xl bg-gray-100)
+  relative
 `;
 
 const IconWrapper = tw.div`
-  w-20 h-20 
+  absolute top-20 right-20 
+  w-20 h-20
   flex items-center justify-center
-  text-gray-400
-`;
-
-const StyledImage = tw.div`
-  w-300 h-300 bg-gray-200
+  
 `;
 
 const TitleWrapper = tw.div`
