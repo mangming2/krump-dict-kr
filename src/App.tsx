@@ -26,6 +26,10 @@ function App() {
             <Route path="/krump" element={<Krump />} />
             <Route path="/krump-word-dance" element={<KrumpWordDance />} />
             <Route path="/krump-word-culture" element={<KrumpWordCulture />} />
+            <Route
+              path="/krump-word-culture/:id"
+              element={<KrumpWordCulture />}
+            />
           </Routes>
         </RouteWrapper>
       </BrowserRouter>

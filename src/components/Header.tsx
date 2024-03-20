@@ -3,6 +3,7 @@ import Logo from "../assets/logo-color.png";
 import { IconHambuger } from "./icons";
 import { useEffect, useRef, useState } from "react";
 import { Lnb } from "./lnb";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ export const Header = () => {
     setIsOpen(!isOpen);
   };
   const wrapperRef = useRef<HTMLDivElement>(null); // Ref for the wrapper
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -36,7 +38,7 @@ export const Header = () => {
       <IconWrapper onClick={handleOpen}>
         <IconHambuger />
       </IconWrapper>
-      <LogoImg src={Logo} alt="logo" />
+      <LogoImg src={Logo} alt="logo" onClick={() => navigate("/")} />
       <Title>Korea Krump Dictionary</Title>
     </Wrapper>
   );

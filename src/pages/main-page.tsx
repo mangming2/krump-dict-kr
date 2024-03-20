@@ -1,42 +1,50 @@
 import tw from "twin.macro";
 import { RouterBox } from "../components/main/router-box";
+import { SearchBar } from "../components/main/search-bar";
+import { useNavigate } from "react-router-dom";
 
 const RouterContents = [
   {
     title: "What is Krump?",
     icon: <span>👼</span>,
     subTitle: "크럼프의 시작과 역사를 알아보세요.",
-    onClick: () => {},
+    path: "/krump",
   },
   {
     title: "크럼프 기본 용어 / 문화",
     icon: <span>💬</span>,
     subTitle: "크럼프 문화의 기본 용어를 알아보세요.",
-    onClick: () => {},
+    path: "/krump-word-culture",
   },
   {
     title: "크럼프 기본 용어 / 댄스",
     icon: <span>🕺🏼</span>,
     subTitle: "크럼프 댄스의 기본 용어를 알아보세요.",
-    onClick: () => {},
+    path: "/krump-word-dance",
   },
   {
     title: "국내 댄서분들의 정리",
     icon: <span>🇰🇷</span>,
     subTitle: "국내 댄서분들의 크럼프 관련 정보 입니다.",
-    onClick: () => {},
+    path: "/",
   },
   {
     title: "해외 댄서분들의 정리",
     icon: <span>🌏</span>,
     subTitle: "해외 댄서분들의 크럼프 관련 정보 입니다.",
-    onClick: () => {},
+    path: "/",
   },
 ];
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
+  const onClickPath = (path: string) => {
+    navigate(path);
+  };
   return (
     <Wrapper>
+      <SearchBar />
       <TitleWrapper>
         <Title>Korea Krump Dictionary</Title>
         <Subtitle>
@@ -54,7 +62,7 @@ const MainPage = () => {
             title={content.title}
             icon={content.icon}
             subTitle={content.subTitle}
-            onClick={content.onClick}
+            onClick={() => onClickPath(content.path)}
           />
         ))}
       </BoxWrapper>

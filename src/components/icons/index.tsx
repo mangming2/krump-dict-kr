@@ -99,6 +99,25 @@ export const IconArrowDown = ({ color, ...rest }: IconProps) => (
   </svg>
 );
 
+export const IconArrowRight = ({ color, ...rest }: IconProps) => (
+  <svg
+    width="5"
+    height="10"
+    viewBox="0 0 5 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    {...rest}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0.179574 0.615909C-0.0325604 0.792696 -0.061215 1.10798 0.115571 1.32011L3.18215 4.99984L0.115557 8.67993C-0.0612205 8.89207 -0.0325512 9.20735 0.179591 9.38413C0.391734 9.56091 0.707016 9.53224 0.883793 9.3201L4.21713 5.31991C4.37164 5.13448 4.37163 4.86515 4.21711 4.67973L0.883778 0.679911C0.706991 0.467777 0.391709 0.439122 0.179574 0.615909Z"
+      fill={color ?? "#202124"}
+    />
+  </svg>
+);
+
 export const IconAcount = ({ color, ...rest }: IconProps) => (
   <svg
     width="18"
