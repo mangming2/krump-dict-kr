@@ -29,7 +29,7 @@ const KrumpWordCulturePage = () => {
     fetchKrumpWords();
   }, [id, getKrumpWords]);
 
-  if (!contents) {
+  if (contents.length === 0) {
     return <LoadingPage />;
   }
 
