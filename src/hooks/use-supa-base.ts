@@ -39,5 +39,19 @@ export const useSupaBase = ({ type, id }: SupaBaseProps) => {
     return data;
   };
 
-  return { getKrumpWords, getKrumpWordDetail };
+  const getChildrenWordsById = async (childId: number) => {
+    const { data, error } = await supabase
+      .from("krumpdicttable")
+      .select()
+      .eq("type", type)
+      .eq("id", childId);
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(data);
+    return data;
+  };
+
+  return { getKrumpWords, getKrumpWordDetail, getChildrenWordsById };
 };

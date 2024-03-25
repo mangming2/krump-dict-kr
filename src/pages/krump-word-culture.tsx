@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import LoadingPage from "./loading-page";
 import { KrumpInformation } from "../types";
 import { useSupaBase } from "../hooks/use-supa-base";
+import tw from "twin.macro";
 
 const KrumpWordCulturePage = () => {
   const { getKrumpWords } = useSupaBase({ type: "culture" });
@@ -27,23 +28,19 @@ const KrumpWordCulturePage = () => {
     };
 
     fetchKrumpWords();
-  }, [id, getKrumpWords]);
+  }, [id]);
 
   if (contents.length === 0) {
     return <LoadingPage />;
   }
 
   const handleClick = (content: KrumpInformation) => {
-    if (content.childrenId === null) {
-      navigate(`/detail/${content.type}/${content.id}`);
-    } else {
-      navigate(`/krump-word-culture/${content.id}`);
-    }
+    navigate(`/detail/${content.type}/${content.id}`);
   };
 
   return (
-    <div>
-      <h1>Krump Word Culture</h1>
+    <Wrapper>
+      <Title>Krump Word Culture</Title>
 
       {contents.map((krumpWord) => (
         <ContentBox
@@ -60,8 +57,21 @@ const KrumpWordCulturePage = () => {
           hasChildren={krumpWord.childrenId !== null}
         />
       ))}
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = tw.div`
+  flex
+  flex-col
+  gap-12
+  px-32 py-40
+`;
+
+const Title = tw.div`
+  text-2xl
+  font-bold
+  mb-5
+`;
 
 export default KrumpWordCulturePage;

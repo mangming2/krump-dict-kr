@@ -36,7 +36,7 @@ export const ContentBox = ({
 
       <FootNoteWrapper>
         <FootNote>📌</FootNote>
-        <Review>리뷰</Review>
+        <Review>Reviewed At</Review>
         <CreatedAt>2021.10.10</CreatedAt>
       </FootNoteWrapper>
     </Wrapper>
@@ -71,11 +71,11 @@ const DescriptionWrapper = tw.div`
 `;
 
 const Description = tw.div`
-    font-xl-m text-black
+    font-l-r text-black
 `;
 
 const TextWrapper = tw.div`
-    flex flex-col
+    flex flex-col gap-12
 `;
 
 const FootNoteWrapper = tw.div`
