@@ -8,7 +8,7 @@ interface LnbProps {
   setIsOpen: (isOpen: boolean) => void;
 }
 
-export const Lnb = ({ isOpen, setIsOpen }: LnbProps) => {
+export const LnbBox = ({ isOpen, setIsOpen }: LnbProps) => {
   const navigate = useNavigate();
 
   const menus = [

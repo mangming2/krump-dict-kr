@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import Logo from "../assets/logo-color.png";
 import { IconHambuger } from "./icons";
 import { useEffect, useRef, useState } from "react";
-import { Lnb } from "./lnb";
+import { LnbBox } from "./lnb";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
@@ -33,7 +33,7 @@ export const Header = () => {
   return (
     <Wrapper>
       <LnbWrapper ref={wrapperRef}>
-        <Lnb isOpen={isOpen} setIsOpen={setIsOpen} />
+        <LnbBox isOpen={isOpen} setIsOpen={setIsOpen} />
       </LnbWrapper>
       <IconWrapper onClick={handleOpen}>
         <IconHambuger />
