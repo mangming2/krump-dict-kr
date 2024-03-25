@@ -1,36 +1,77 @@
-import React, { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { useEffect, useState } from "react";
+import { ContentBox } from "../components/main/content-box";
+import { useNavigate, useParams } from "react-router-dom";
 import LoadingPage from "./loading-page";
+import { KrumpInformation } from "../types";
+import { useSupaBase } from "../hooks/use-supa-base";
+import tw from "twin.macro";
 
 const KrumpWordDancePage = () => {
-  const supabaseURl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
-  const supabase = createClient(supabaseURl, supabaseKey);
+  const { getKrumpWords } = useSupaBase({ type: "dance" });
+  const [contents, setContents] = useState<KrumpInformation[]>([]);
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-  const [krumpWords, setKrumpWords] = useState([]);
-
-  async function getKrumpWords() {
-    const { data, error } = await supabase.from("krumpwordstable").select();
-    if (error) {
-      console.error(error);
-      return;
-    }
-    setKrumpWords(data);
-  }
   useEffect(() => {
-    getKrumpWords();
-  }, []);
+    const fetchKrumpWords = async () => {
+      const krumpWordsCulture = (await getKrumpWords()) || [];
+
+      if (id === undefined) {
+        setContents(
+          krumpWordsCulture.filter((content) => content.parentId === null)
+        );
+      } else {
+        setContents(
+          krumpWordsCulture.filter((content) => content.parentId === +id)
+        );
+      }
+    };
+
+    fetchKrumpWords();
+  }, [id]);
+
+  if (contents.length === 0) {
+    return <LoadingPage />;
+  }
+
+  const handleClick = (content: KrumpInformation) => {
+    navigate(`/detail/${content.type}/${content.id}`);
+  };
 
   return (
-    <div>
-      <h1>Krump Word Dance</h1>
-      <ul>
-        {krumpWords.map((krumpWord) => (
-          <li key={krumpWord.id}>{krumpWord.title}</li>
-        ))}
-      </ul>
-    </div>
+    <Wrapper>
+      <Title>Krump Word Culture</Title>
+
+      {contents.map((krumpWord) => (
+        <ContentBox
+          key={krumpWord.id}
+          id={krumpWord.id}
+          type={krumpWord.type}
+          title={krumpWord.title}
+          description={krumpWord.description}
+          image={krumpWord.image}
+          link={krumpWord.link}
+          reviewBy={krumpWord.reviewBy}
+          createdAt={krumpWord.createdAt}
+          onClick={() => handleClick(krumpWord)}
+          hasChildren={krumpWord.childrenId !== null}
+        />
+      ))}
+    </Wrapper>
   );
 };
+
+const Wrapper = tw.div`
+  flex
+  flex-col
+  gap-12
+  px-32 py-40
+`;
+
+const Title = tw.div`
+  text-2xl
+  font-bold
+  mb-5
+`;
 
 export default KrumpWordDancePage;

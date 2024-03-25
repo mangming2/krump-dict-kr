@@ -10,6 +10,17 @@ export const useSupaBase = ({ type, id }: SupaBaseProps) => {
   const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
   const supabase = createClient(supabaseURl, supabaseKey);
 
+  //전체 테이블 데이터를 가져오는 함수
+  const getAllKrumpWords = async () => {
+    const { data, error } = await supabase.from("krumpdicttable").select();
+    if (error) {
+      console.error(error);
+      return;
+    }
+    console.log(data);
+    return data;
+  };
+
   //전체 테이블에서 type이 props로 받은 type인 데이터를 가져오는 함수
   const getKrumpWords = async () => {
     const { data, error } = await supabase
@@ -53,5 +64,10 @@ export const useSupaBase = ({ type, id }: SupaBaseProps) => {
     return data;
   };
 
-  return { getKrumpWords, getKrumpWordDetail, getChildrenWordsById };
+  return {
+    getKrumpWords,
+    getAllKrumpWords,
+    getKrumpWordDetail,
+    getChildrenWordsById,
+  };
 };
