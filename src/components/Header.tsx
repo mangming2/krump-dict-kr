@@ -2,8 +2,9 @@ import tw from "twin.macro";
 import Logo from "../assets/logo-color.png";
 import { IconHambuger } from "./icons";
 import { useEffect, useRef, useState } from "react";
-import { LnbBox } from "./lnb";
+
 import { useNavigate } from "react-router-dom";
+import { LnbBox } from "./lnb";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
