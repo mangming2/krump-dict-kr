@@ -26,7 +26,7 @@ const RouterContents = [
     title: "국내 댄서분들의 정리",
     icon: <span>🇰🇷</span>,
     subTitle: "국내 댄서분들의 크럼프 관련 정보 입니다.",
-    path: "/",
+    path: "/krump-tips-domestic",
   },
   // {
   //   title: "해외 댄서분들의 정리",

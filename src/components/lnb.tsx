@@ -12,10 +12,11 @@ export const LnbBox = ({ isOpen, setIsOpen }: LnbProps) => {
   const navigate = useNavigate();
 
   const menus = [
-    { name: "main", path: "/" }, // Add "main" menu
-    { name: "krump", path: "/krump" },
-    { name: "krump word dance", path: "/krump-word-dance" },
-    { name: "krump word culture", path: "/krump-word-culture" },
+    { name: "Main", path: "/" }, // Add "main" menu
+    { name: "What is Krump?", path: "/krump" },
+    { name: "krump Words - Dance", path: "/krump-word-dance" },
+    { name: "krump Words - Culture", path: "/krump-word-culture" },
+    { name: "krump Tips - Domestic", path: "/krump-word-music" },
   ];
 
   const onClickPath = (path: string) => {

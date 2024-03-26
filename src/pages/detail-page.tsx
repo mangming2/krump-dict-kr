@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { KrumpInformation } from "../types";
@@ -58,12 +59,13 @@ const DetailPage = () => {
   return (
     <>
       <Wrapper key={contents?.id}>
-        {contents?.image ? (
-          <StyledImage src={contents?.image} alt={contents?.title} />
-        ) : (
-          <NoImageBox />
-        )}
-
+        <ImageWrapper>
+          {contents?.image ? (
+            <StyledImage src={contents?.image} alt={contents?.title} />
+          ) : (
+            <NoImageBox />
+          )}
+        </ImageWrapper>
         <TextWrapper>
           <TitleWrapper>
             <Title>{contents?.title}</Title>
@@ -105,6 +107,10 @@ const Wrapper = tw.div`
   p-16 rounded-md cursor-pointer
 `;
 
+const ImageWrapper = tw.div`
+  flex gap-12 items-center justify-center
+`;
+
 const StyledImage = tw.img`
   w-300 h-300 bg-gray-200
 `;
@@ -114,19 +120,19 @@ const TitleWrapper = tw.div`
 `;
 
 const Title = tw.div`
-    font-xxl-b text-black
+  font-xxl-b text-black
 `;
 
 const DescriptionWrapper = tw.div`
-    flex gap-12 items-center
+  flex gap-12 items-center
 `;
 
 const Description = tw.div`
-    font-xl-m text-black
+  font-xl-m text-black
 `;
 
 const TextWrapper = tw.div`
-    flex flex-col
+  flex flex-col
 `;
 
 const FootNoteWrapper = tw.div`

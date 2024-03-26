@@ -14,7 +14,11 @@ const KrumpWordCulturePage = () => {
 
   useEffect(() => {
     const fetchKrumpWords = async () => {
-      const krumpWordsCulture = (await getKrumpWords()) || [];
+      let krumpWordsCulture = (await getKrumpWords()) || [];
+
+      krumpWordsCulture = krumpWordsCulture.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
 
       if (id === undefined) {
         setContents(
@@ -28,6 +32,7 @@ const KrumpWordCulturePage = () => {
     };
 
     fetchKrumpWords();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (contents.length === 0) {

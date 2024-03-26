@@ -28,6 +28,7 @@ const KrumpWordDancePage = () => {
     };
 
     fetchKrumpWords();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (contents.length === 0) {

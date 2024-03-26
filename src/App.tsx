@@ -12,6 +12,7 @@ function App() {
   const Krump = lazy(() => import("./pages/krump"));
   const KrumpWordDance = lazy(() => import("./pages/krump-word-dance"));
   const KrumpWordCulture = lazy(() => import("./pages/krump-word-culture"));
+  const KrumpTipsDomestic = lazy(() => import("./pages/krump-tips-domestic"));
   const DetailPage = lazy(() => import("./pages/detail-page"));
 
   if (isMD) return <ErrorPage />;
@@ -33,6 +34,15 @@ function App() {
               path="/krump-word-culture/:id"
               element={<KrumpWordCulture />}
             />
+            <Route
+              path="/krump-tips-domestic"
+              element={<KrumpTipsDomestic />}
+            />
+            <Route
+              path="/krump-tips-domestic/:id"
+              element={<KrumpTipsDomestic />}
+            />
+
             <Route path="/detail/:type/:id" element={<DetailPage />} />
           </Routes>
         </RouteWrapper>

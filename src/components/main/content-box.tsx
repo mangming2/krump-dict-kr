@@ -71,11 +71,13 @@ const DescriptionWrapper = tw.div`
 `;
 
 const Description = tw.div`
-    font-l-r text-black
+  font-xl-m text-black
+  overflow-hidden whitespace-nowrap text-ellipsis
 `;
 
 const TextWrapper = tw.div`
     flex flex-col gap-12
+    
 `;
 
 const FootNoteWrapper = tw.div`
@@ -83,13 +85,13 @@ const FootNoteWrapper = tw.div`
 `;
 
 const FootNote = tw.div`
-    font-xl-m text-black
+  text-black
 `;
 
 const Review = tw.div`
-    font-xl-m text-black
+    font-l-m text-black
 `;
 
 const CreatedAt = tw.div`
-    font-xl-m text-black
+    font-l-m text-black
 `;
