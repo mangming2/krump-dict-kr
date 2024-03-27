@@ -75,6 +75,15 @@ const DetailPage = () => {
           </DescriptionWrapper>
         </TextWrapper>
 
+        <LinkWrapper>
+          <LinkTitle>관련 링크</LinkTitle>
+          <LinkDescription
+            onClick={() => window.open(contents?.link, "_blank")}
+          >
+            {contents?.link}
+          </LinkDescription>
+        </LinkWrapper>
+
         <FootNoteWrapper>
           <FootNote>📌</FootNote>
           <Review>Reviewed At</Review>
@@ -104,7 +113,7 @@ const DetailPage = () => {
 const Wrapper = tw.div`
   flex flex-col bg-white gap-8
   border-solid border-2 border-gray-200
-  p-16 rounded-md cursor-pointer
+  p-16 rounded-md
 `;
 
 const ImageWrapper = tw.div`
@@ -132,7 +141,20 @@ const Description = tw.div`
 `;
 
 const TextWrapper = tw.div`
-  flex flex-col
+  flex flex-col gap-12
+`;
+
+const LinkWrapper = tw.div`
+    flex gap-12 items-center
+`;
+
+const LinkTitle = tw.div`
+    font-xl-m text-black
+`;
+
+const LinkDescription = tw.a`
+    font-l-m text-black
+    overflow-hidden whitespace-nowrap text-ellipsis
 `;
 
 const FootNoteWrapper = tw.div`

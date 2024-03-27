@@ -77,7 +77,6 @@ const Description = tw.div`
 
 const TextWrapper = tw.div`
     flex flex-col gap-12
-    
 `;
 
 const FootNoteWrapper = tw.div`
