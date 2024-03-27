@@ -112,13 +112,16 @@ export const SearchBar = () => {
 
         {isDropdown && (
           <Dropdown>
-            {krumpWords?.filter((item) =>
-              item.title.toLowerCase().includes(search.toLowerCase())
-            ).length > 0 ? (
+            {krumpWords
+              ?.filter((item) =>
+                item.title.toLowerCase().includes(search.toLowerCase())
+              )
+              .slice(0, 5).length > 0 ? (
               krumpWords
                 .filter((item) =>
                   item.title.toLowerCase().includes(search.toLowerCase())
                 )
+                .slice(0, 5)
                 .map((item) => (
                   <DropdownItem
                     key={item.id}
