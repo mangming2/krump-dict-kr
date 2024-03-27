@@ -133,7 +133,7 @@ const Title = tw.div`
 `;
 
 const DescriptionWrapper = tw.div`
-  flex gap-12 items-center
+  flex gap-12 items-center p-12
 `;
 
 const Description = tw.div`
