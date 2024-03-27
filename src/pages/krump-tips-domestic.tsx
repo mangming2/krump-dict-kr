@@ -7,7 +7,7 @@ import { useSupaBase } from "../hooks/use-supa-base";
 import tw from "twin.macro";
 
 const KrumpTipsDomesticPage = () => {
-  const { getKrumpWords } = useSupaBase({ type: "dance" });
+  const { getKrumpWords } = useSupaBase({ type: "domestic" });
   const [contents, setContents] = useState<KrumpInformation[]>([]);
   const navigate = useNavigate();
   const { id } = useParams();

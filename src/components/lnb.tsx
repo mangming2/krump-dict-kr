@@ -107,12 +107,13 @@ interface NavigationItemProps {
 
 const NavigationItem = styled.div<NavigationItemProps>((path) => [
   tw`
-  cursor-pointer
+  cursor-pointer font-m-b
   `,
   css`
     &:hover {
-      color: red;
+      background-color: #f5f5f5;
+      color: #333;
     }
   `,
-  path.path ? tw`text-red-500` : tw`text-black`,
+  path.path ? tw`text-red-400` : tw`text-black`,
 ]);
