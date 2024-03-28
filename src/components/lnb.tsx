@@ -16,7 +16,7 @@ export const LnbBox = ({ isOpen, setIsOpen }: LnbProps) => {
     { name: "What is Krump?", path: "/krump" },
     { name: "krump Words - Dance", path: "/krump-word-dance" },
     { name: "krump Words - Culture", path: "/krump-word-culture" },
-    { name: "krump Tips - Domestic", path: "/krump-word-music" },
+    { name: "krump Tips - Domestic", path: "/krump-tips-domestic" },
   ];
 
   const onClickPath = (path: string) => {

@@ -87,7 +87,7 @@ const DetailPage = () => {
         <FootNoteWrapper>
           <FootNote>📌</FootNote>
           <Review>Reviewed At</Review>
-          <CreatedAt>2021.10.10</CreatedAt>
+          <CreatedAt>{contents?.createdAt}</CreatedAt>
         </FootNoteWrapper>
       </Wrapper>
       {childContents &&
@@ -111,7 +111,7 @@ const DetailPage = () => {
 };
 
 const Wrapper = tw.div`
-  flex flex-col bg-white gap-8
+  flex flex-col bg-white gap-16
   border-solid border-2 border-gray-200
   p-16 rounded-md
 `;
@@ -133,11 +133,12 @@ const Title = tw.div`
 `;
 
 const DescriptionWrapper = tw.div`
-  flex gap-12 items-center p-12
+  flex gap-12 items-center px-12
 `;
 
 const Description = tw.div`
   font-xl-m text-black
+  whitespace-pre-line
 `;
 
 const TextWrapper = tw.div`
@@ -166,11 +167,11 @@ const FootNote = tw.div`
 `;
 
 const Review = tw.div`
-    font-xl-m text-black
+    font-l-m text-black
 `;
 
 const CreatedAt = tw.div`
-    font-xl-m text-black
+    font-l-m text-black
 `;
 
 export default DetailPage;

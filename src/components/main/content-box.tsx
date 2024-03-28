@@ -13,6 +13,7 @@ export const ContentBox = ({
   hasChildren,
   title,
   description,
+  createdAt,
   onClick,
 }: ContentBoxProps) => {
   return (
@@ -37,7 +38,7 @@ export const ContentBox = ({
       <FootNoteWrapper>
         <FootNote>📌</FootNote>
         <Review>Reviewed At</Review>
-        <CreatedAt>2021.10.10</CreatedAt>
+        <CreatedAt>{createdAt}</CreatedAt>
       </FootNoteWrapper>
     </Wrapper>
   );
@@ -63,7 +64,7 @@ const TitleWrapper = tw.div`
 `;
 
 const Title = tw.div`
-    font-xxl-b text-black
+    font-l-b text-black
 `;
 
 const DescriptionWrapper = tw.div`
@@ -71,7 +72,7 @@ const DescriptionWrapper = tw.div`
 `;
 
 const Description = tw.div`
-  font-xl-m text-black
+  font-l-m text-black
   overflow-hidden whitespace-nowrap text-ellipsis
 `;
 
