@@ -2,6 +2,7 @@ import tw from "twin.macro";
 import { RouterBox } from "../components/main/router-box";
 import { SearchBar } from "../components/main/search-bar";
 import { useNavigate } from "react-router-dom";
+import LogoImage from "../assets/logo-color.png";
 
 const RouterContents = [
   {
@@ -67,6 +68,10 @@ const MainPage = () => {
         ))}
       </BoxWrapper>
 
+      <LogoWrapper>
+        <StyledLogoImage src={LogoImage} alt="logo" />
+      </LogoWrapper>
+
       <ThanksToWrapper>
         <ThanksToTitle>
           많은 단어들을 검수 및 정리를 해주신 분들에게 감사드립니다.
@@ -99,6 +104,14 @@ const Subtitle = tw.div`
 
 const BoxWrapper = tw.div`
   grid grid-cols-1 gap-8
+`;
+
+const LogoWrapper = tw.div`
+  flex flex-center
+`;
+
+const StyledLogoImage = tw.img`
+  w-200 h-200
 `;
 
 const ThanksToWrapper = tw.div`
