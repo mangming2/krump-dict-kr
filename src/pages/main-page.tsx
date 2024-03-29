@@ -119,7 +119,7 @@ const ThanksToWrapper = tw.div`
 `;
 
 const ThanksToTitle = tw.div`
-  font-xl-m text-black text-center
+  font-xxl-b text-black text-center
 `;
 
 const ThanksToDescription = tw.div`
