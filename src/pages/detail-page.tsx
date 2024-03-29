@@ -76,7 +76,7 @@ const DetailPage = () => {
         </TextWrapper>
 
         <LinkWrapper>
-          <LinkTitle>관련 링크</LinkTitle>
+          <LinkTitle>출처 / 관련 링크</LinkTitle>
           <LinkDescription
             onClick={() => window.open(contents?.link, "_blank")}
           >
