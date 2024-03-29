@@ -66,6 +66,15 @@ const MainPage = () => {
           />
         ))}
       </BoxWrapper>
+
+      <ThanksToWrapper>
+        <ThanksToTitle>
+          많은 단어들을 검수 및 정리를 해주신 분들에게 감사드립니다.
+        </ThanksToTitle>
+        <ThanksToDescription>
+          1차 검수 : Spark / Damage / Groovy
+        </ThanksToDescription>
+      </ThanksToWrapper>
     </Wrapper>
   );
 };
@@ -90,6 +99,18 @@ const Subtitle = tw.div`
 
 const BoxWrapper = tw.div`
   grid grid-cols-1 gap-8
+`;
+
+const ThanksToWrapper = tw.div`
+  flex flex-col gap-8 items-center p-16
+`;
+
+const ThanksToTitle = tw.div`
+  font-xl-m text-black text-center
+`;
+
+const ThanksToDescription = tw.div`
+  font-xl-m text-black
 `;
 
 export default MainPage;
