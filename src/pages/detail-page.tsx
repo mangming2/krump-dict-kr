@@ -74,16 +74,16 @@ const DetailPage = () => {
             <Description>{contents?.description}</Description>
           </DescriptionWrapper>
         </TextWrapper>
-
-        <LinkWrapper>
-          <LinkTitle>출처 / 관련 링크</LinkTitle>
-          <LinkDescription
-            onClick={() => window.open(contents?.link, "_blank")}
-          >
-            {contents?.link}
-          </LinkDescription>
-        </LinkWrapper>
-
+        {contents?.link && (
+          <LinkWrapper>
+            <LinkTitle>출처 / 관련 링크</LinkTitle>
+            <LinkDescription
+              onClick={() => window.open(contents?.link, "_blank")}
+            >
+              {contents?.link}
+            </LinkDescription>
+          </LinkWrapper>
+        )}
         <FootNoteWrapper>
           <FootNote>📌</FootNote>
           <Review>Reviewed At</Review>

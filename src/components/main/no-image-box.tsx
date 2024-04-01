@@ -3,8 +3,8 @@ import NoImage from "../../assets/no-image.jpeg";
 import Logo from "../../assets/logo-color.png";
 
 const NoImageBox = () => {
-  const onClick = () => {
-    alert("이미지 추가 요청을 남겼습니다.");
+  const onClickLink = () => {
+    window.open("https://open.kakao.com/o/g7wwn2Wf", "_blank");
   };
   return (
     <Wrapper>
@@ -13,7 +13,7 @@ const NoImageBox = () => {
           현재 단어에 대한 이미지가 없습니다. <br />
           추가 요청은 톡방에 남겨주세요.
         </Title>
-        <StyledButton onClick={onClick}>
+        <StyledButton onClick={onClickLink}>
           <LogoImage src={Logo} alt={""} />
           톡방에서 요청하기
         </StyledButton>
