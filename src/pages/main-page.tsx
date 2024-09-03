@@ -3,8 +3,7 @@ import { RouterBox } from "../components/main/router-box";
 import { SearchBar } from "../components/main/search-bar";
 import { useNavigate } from "react-router-dom";
 import LogoImage from "../assets/logo-color.png";
-import { useDictTable } from "../hooks/use-dict-table";
-import { fetchDictTable } from "../api";
+import { fetchDictTable } from "../services/notion";
 
 const RouterContents = [
   {
@@ -49,9 +48,8 @@ const MainPage = () => {
   const data = fetchDictTable();
   console.log("data", data);
 
-  const { data: dataQuery, error } = useDictTable();
-  console.log("dataQuery", dataQuery);
-  console.log("error", error);
+  //const data2 = dictTableByNotionApi();
+  //console.log("data2", data2);
 
   return (
     <Wrapper>
