@@ -112,9 +112,9 @@ export const IconArrowRight = ({ color, ...rest }: IconProps) => (
     <path
       d="M6 12H18M18 12L13 7M18 12L13 17"
       stroke="#000000"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -338,9 +338,9 @@ export const IconHambuger = ({ ...rest }: IconProps) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="lucide lucide-menu w-4 h-4"
     preserveAspectRatio="none"
     {...rest}

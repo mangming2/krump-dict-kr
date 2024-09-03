@@ -3,6 +3,8 @@ import { RouterBox } from "../components/main/router-box";
 import { SearchBar } from "../components/main/search-bar";
 import { useNavigate } from "react-router-dom";
 import LogoImage from "../assets/logo-color.png";
+import { useDictTable } from "../hooks/use-dict-table";
+import { fetchDictTable } from "../api";
 
 const RouterContents = [
   {
@@ -43,6 +45,13 @@ const MainPage = () => {
   const onClickPath = (path: string) => {
     navigate(path);
   };
+
+  const data = fetchDictTable();
+  console.log(data);
+
+  // const { error } = useDictTable();
+  // console.log(error);
+
   return (
     <Wrapper>
       <SearchBar />
