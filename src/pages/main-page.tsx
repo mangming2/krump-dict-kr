@@ -47,10 +47,11 @@ const MainPage = () => {
   };
 
   const data = fetchDictTable();
-  console.log(data);
+  console.log("data", data);
 
-  // const { error } = useDictTable();
-  // console.log(error);
+  const { data: dataQuery, error } = useDictTable();
+  console.log("dataQuery", dataQuery);
+  console.log("error", error);
 
   return (
     <Wrapper>
